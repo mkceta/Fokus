@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My Stats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <div class="stats">
+    <h1 class="StatTitle">My Stats</h1>
+    <h2>Total active time:</h2>
+    <h3 id="totalTime" class="StatTime"></h3>
+    <h2>Pomdoros (Full Work + Break cycles):</h2>
+    <h3 id="pomodoros" class="StatTime"></h3>
+  </div>
+  <script>
+let totalSeconds = 0;
+let lastVisit = new Date(localStorage.getItem("lastVisit"));
+
+let savedTotalTime = JSON.parse(localStorage.getItem('totalTime'));
+
+if (savedTotalTime) {
+  totalSeconds = savedTotalTime;
+}
+
+setInterval(function () {
+  totalSeconds++;
+
+  localStorage.setItem('totalTime', JSON.stringify(totalSeconds));
+  localStorage.setItem('lastVisit', new Date()); // update last visit time
+
+  updateTime();
+}, 1000);
+
+function updateTime() {
+  let totalP = document.getElementById("totalTime");
+
+  let hours = Math.floor(totalSeconds / 3600);
+  let minutes = Math.floor((totalSeconds % 3600) / 60);
+  let seconds = totalSeconds % 60;
+  totalP.innerHTML =
+    hours + " h " + minutes + " m " + seconds + " s";
+}
+
+// Log some values for debugging
+console.log('lastVisit:', lastVisit);
+console.log('current time:', new Date());
+console.log('savedTotalTime:', savedTotalTime);
+
+updateTime();
+
+  </script>
+</body>
+
+</html>

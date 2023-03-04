@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fokus</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="player"></div>
+    <p class="date">
+        fokus -
+        <script defer> document.write(new Date().toLocaleDateString()); </script>
+    </p>
+    <div class="row">
+        <div class="column" id="NotepadColumn">
+            <section>
+                <div class="container">
+                    <audio controls>
+                        <source src="https://radio.plaza.one/ogg" id="audio" onload="setVolume()">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <h1 class="section-title">notepad</h1><button class="clear"
+                        onclick="clearNotepad()">[clear]</button>
+                    <div class="notepad">
+                        <h3 contenteditable="true" spellcheck="false" class="editable" id="editor">
+                        </h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="column" id="PomodoroColumn" class="PomodoroColumn">
+            <section>
+                <div class="container">
+                    <h1 class="section-title">pomodoro timer</h1>
+
+                    <div class="painel">
+                        <p id="work">work</p>
+                        <p id="break">break</p>
+                    </div>
+
+                    <div class="timer">
+                        <div class="circle">
+                            <div class="time">
+                                <p id="minutes"></p>
+                                <p>:</p>
+                                <p id="seconds"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
+
+                        <a id="reset" onclick="reset()"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="column" id="TodoColumn">
+            <section>
+                <div class="container">
+                    <h1 class="section-title">todo list</h1><button class="clear" onclick="clearList()">[clear]</button>
+
+                    <form action="" class="todo" style="margin-top:30px !important;">
+                        <input type="text" class="todo-input" placeholder="boring task here">
+                        <button class="todo-button" type="submit">
+                        </button>
+                        <div class="select">
+                            <select name="todos" class="filter-todo">
+                                <option value="all">all</option>
+                                <option value="completed">done</option>
+                                <option value="incomplete">pending</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="todo-container">
+                        <ul class="todo-list"></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <a class="footer" href="/stats">My Stats</a>
+    <script src="./script.js" defer></script>
+</body>
+
+</html>
