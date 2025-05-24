@@ -9,9 +9,9 @@ A website for studying and focusing!
 
 
 
-## Future features
-- Stats page
-- File system
-- Mindmap generator
-- Accounts
-- Profiles (?)
+## To do
+[ ] Stats page
+[ ] File system
+[ ] Mindmap generator
+[ ] Accounts
+[ ] Profiles (?)
