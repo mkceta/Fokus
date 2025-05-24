@@ -10,8 +10,8 @@ A website for studying and focusing!
 
 
 ## To do
-[ ] Stats page
-[ ] File system
-[ ] Mindmap generator
-[ ] Accounts
-[ ] Profiles (?)
+- [ ] Stats page
+- [ ] File system
+- [ ] Mindmap generator
+- [ ] Accounts
+- [ ] Profiles (?)
