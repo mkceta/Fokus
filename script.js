@@ -2,8 +2,8 @@ var audio = new Audio('notification.wav');
 let workTittle = document.getElementById('work');
 let breakTittle = document.getElementById('break');
 
-const workTime = 1;
-const breakTime = 1;
+const workTime = 25;
+const breakTime = 5;
 
 let seconds = "00"
 let minutes = workTime.toString().padStart(2, "0");
